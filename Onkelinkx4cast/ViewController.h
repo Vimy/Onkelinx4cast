@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UIViewControllerTransitioningDelegate>
+@interface ViewController : UIViewController <UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate>
 
 
 

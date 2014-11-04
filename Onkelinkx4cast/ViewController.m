@@ -96,6 +96,11 @@
         button.buttonDateLabel.text = dateString;
         button.frame = CGRectMake(x, 0, 100, 100);
         x += button.frame.size.width;
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tappedStatusButton:)];
+        tap.delegate = self;
+        [button addGestureRecognizer:tap];
+        
         [self.buttonListScrollView addSubview:button];
        
         dateString = nextDateString;
@@ -106,36 +111,65 @@
  
     
 }
+
+- (void)tappedStatusButton:(UITapGestureRecognizer *)sender
+{
+    ButtonView *button = sender.view;
+    
+    NSLog(@"De tap werkt, datum: %@", button.buttonDateLabel.text);
+    //  NSLog(@"Biertap???");
+    //  NSLog(@"3/10");
+    
+    ViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    
+    [self transitionToViewcontroller:controller comingFromLeft:NO];
+    
+}
+
 - (IBAction)slideMenuButton:(UIButton *)sender
 {
     
     NSLog(@"Hoi - Hamburger");
     HamburgerViewController *burger = [self.storyboard instantiateViewControllerWithIdentifier:@"hamburger"];
+    [self transitionToViewcontroller:burger comingFromLeft:YES];
+    
+ // http://stackoverflow.com/questions/11412467/dismissmodalviewcontroller-with-transition-left-to-right
+}
+
+- (void)transitionToViewcontroller:(UIViewController *)vc comingFromLeft:(BOOL)isFromLeft
+{
     
     CATransition *transition = [CATransition animation];
     transition.duration = 0.35;
     transition.timingFunction =
     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionMoveIn;
-    transition.subtype = kCATransitionFromLeft;
+    
+    if(isFromLeft)
+    {
+        transition.subtype = kCATransitionFromLeft;
+    }
+    else
+    {
+        transition.subtype = kCATransitionFromRight;
+    }
     
     // NSLog(@"%s: self.view.window=%@", _func_, self.view.window);
     UIView *containerView = self.view.window;
     [containerView.layer addAnimation:transition forKey:nil];
     //[self presentModalViewController:burger animated:NO];
-    [self presentViewController:burger animated:NO completion:nil];
-    
- 
-}
+    [self presentViewController:vc animated:NO completion:nil];
 
-- (void)switchView
+    
+}
+/*- (void)switchView
 {
     NSLog(@"Hoi");
     
     ViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
     [self presentViewController:vc animated:YES completion:nil];
 }
-
+*/
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
     return self.animator;
