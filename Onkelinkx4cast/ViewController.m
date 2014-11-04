@@ -122,8 +122,10 @@
     // NSLog(@"%s: self.view.window=%@", _func_, self.view.window);
     UIView *containerView = self.view.window;
     [containerView.layer addAnimation:transition forKey:nil];
-    [self presentModalViewController:burger animated:NO];
+    //[self presentModalViewController:burger animated:NO];
+    [self presentViewController:burger animated:NO completion:nil];
     
+ 
 }
 
 - (void)switchView

@@ -15,28 +15,60 @@
                         <viewControllerLayoutGuide type="bottom" id="6gr-HU-Lkn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4UY-nc-rOO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bY-EZ-che">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bY-EZ-che">
+                                <rect key="frame" x="309" y="28" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="N2r-EN-6Uv"/>
+                                </constraints>
+                                <state key="normal" image="close_icon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="backButton:" destination="tgS-5e-UZ6" eventType="touchUpInside" id="n6i-dO-JEg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBZ-9v-YnR">
+                                <rect key="frame" x="102" y="188" width="170" height="52"/>
+                                <string key="text">UItleg verschillende 
+statussen</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Algemene voorwaarden" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBg-Yd-AEn">
+                                <rect key="frame" x="102" y="248" width="193" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="black181.png" translatesAutoresizingMaskIntoConstraints="NO" id="fb4-mf-RoC">
+                                <rect key="frame" x="42" y="146" width="40" height="40"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="caution2.png" translatesAutoresizingMaskIntoConstraints="NO" id="VII-Bu-1TI">
+                                <rect key="frame" x="42" y="194" width="40" height="40"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bullet4.png" translatesAutoresizingMaskIntoConstraints="NO" id="lu5-pc-m2K">
+                                <rect key="frame" x="42" y="239" width="40" height="40"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Over &quot;Onkelinx 4cast&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwc-jQ-QX1">
+                                <rect key="frame" x="102" y="155" width="181" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.24864177239733742" blue="0.1960910864111578" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.45490196078431372" green="1" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="6gr-HU-Lkn" firstAttribute="top" secondItem="1bY-EZ-che" secondAttribute="bottom" constant="589" id="CUF-Fo-gyR"/>
                             <constraint firstItem="1bY-EZ-che" firstAttribute="trailing" secondItem="4UY-nc-rOO" secondAttribute="trailingMargin" id="VvR-qT-2gd"/>
+                            <constraint firstItem="1bY-EZ-che" firstAttribute="trailing" secondItem="4UY-nc-rOO" secondAttribute="trailingMargin" id="lGY-jn-obT"/>
+                            <constraint firstItem="1bY-EZ-che" firstAttribute="top" secondItem="vwC-ja-pCI" secondAttribute="bottom" constant="8" symbolic="YES" id="pEh-Qx-bQX"/>
                             <constraint firstItem="1bY-EZ-che" firstAttribute="top" secondItem="vwC-ja-pCI" secondAttribute="bottom" constant="19" id="zk9-V8-K4M"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="1bY-EZ-che"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="VvR-qT-2gd"/>
                                 <exclude reference="zk9-V8-K4M"/>
@@ -53,10 +85,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="JUk-sC-H2e"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzM-ni-XdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2725.5" y="482.5"/>
+            <point key="canvasLocation" x="2601.5" y="518.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -173,5 +206,9 @@
     <resources>
         <image name="1415070708_menu-alt-128.png" width="128" height="128"/>
         <image name="Onky.png" width="264" height="239"/>
+        <image name="black181.png" width="512" height="512"/>
+        <image name="bullet4.png" width="512" height="512"/>
+        <image name="caution2.png" width="512" height="512"/>
+        <image name="close_icon.png" width="128" height="128"/>
     </resources>
 </document>
