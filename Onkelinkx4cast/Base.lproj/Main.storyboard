@@ -59,7 +59,7 @@ statussen</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.45490196078431372" green="1" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.34509803921568627" green="0.58431372549019611" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6gr-HU-Lkn" firstAttribute="top" secondItem="1bY-EZ-che" secondAttribute="bottom" constant="589" id="CUF-Fo-gyR"/>
                             <constraint firstItem="1bY-EZ-che" firstAttribute="trailing" secondItem="4UY-nc-rOO" secondAttribute="trailingMargin" id="VvR-qT-2gd"/>
@@ -118,7 +118,7 @@ statussen</string>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" fixedFrame="YES" text="Normale situatie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5h-bS-rdj">
-                                <rect key="frame" x="113" y="309" width="149" height="21"/>
+                                <rect key="frame" x="113" y="309" width="207" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" red="0.97084340469613262" green="0.97084340469613262" blue="0.97084340469613262" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -136,8 +136,7 @@ statussen</string>
                                 </variation>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-pe-Vn9" customClass="ScrollViewBugFix">
-                                <rect key="frame" x="0.0" y="567" width="381" height="100"/>
-                                <color key="backgroundColor" red="0.18176118263931501" green="0.8435126035911602" blue="0.12704266642747267" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.26666666666666666" green="0.49803921568627452" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="500" width="406" height="100"/>
                                 </variation>
@@ -158,7 +157,7 @@ statussen</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.50768648469916244" green="1" blue="0.57839646804687828" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.32549019607843138" green="0.5607843137254902" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="gUy-pe-Vn9"/>
@@ -193,8 +192,10 @@ statussen</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="buttonListScrollView" destination="gUy-pe-Vn9" id="Laa-L4-SSS"/>
-                        <outlet property="image" destination="FtS-ca-Zl6" id="Be2-xi-Z46"/>
-                        <outlet property="statusUitlegLabel" destination="Eno-uV-7zX" id="WSf-8t-o1A"/>
+                        <outlet property="datumLabel" destination="iBw-F0-qNf" id="CtM-jJ-R8h"/>
+                        <outlet property="image" destination="FtS-ca-Zl6" id="Zod-Al-uFo"/>
+                        <outlet property="situatieLabel" destination="H5h-bS-rdj" id="E1Y-sI-tP3"/>
+                        <outlet property="statusUitlegLabel" destination="Eno-uV-7zX" id="JTo-7j-RWK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

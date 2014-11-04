@@ -12,10 +12,12 @@
 #import "ButtonView.h"
 #import "SlideAnimationController.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIScrollView *buttonListScrollView;
-@property (strong, nonatomic) IBOutlet UIImageView *image;
-@property (strong, nonatomic) IBOutlet UILabel *statusUitlegLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *imageOnky;
 @property (strong, nonatomic) SlideAnimationController  *animator;
 
 @end
@@ -31,7 +33,6 @@
     self.buttonListScrollView.userInteractionEnabled = YES;
     self.buttonListScrollView.scrollEnabled = YES;
     int x = 0;
-    int y = 0;
     int count = 7;
 
     self.buttonListScrollView.contentSize = CGSizeMake(700, 0);
@@ -45,13 +46,12 @@
     self.image.layer.borderColor = [UIColor whiteColor].CGColor;
     
   
-    NSArray *weekdays = @[@"MA", @"DI", @"WO",@"D0",@"VR",@"ZA",@"ZO"];
     
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd/MM"];
     NSString *dateString = [dateFormatter stringFromDate:date];
-    NSLog(@"Date %@", dateString);
+  //  NSLog(@"Date %@", dateString);
     
     
     
@@ -65,29 +65,12 @@
         NSDate *nextDate = [theCalendar dateByAddingComponents:dayComponent toDate:date options:0];
         NSString *nextDateString = [dateFormatter stringFromDate:nextDate];
        // NSLog(@"nextDate: %@", nextDateString   );
-        date = nextDate;
+        
         NSDateFormatter *weekdayFormatter = [[NSDateFormatter alloc]init];
         
         [weekdayFormatter setDateFormat:@"E"];
         NSString *weekday = [weekdayFormatter stringFromDate:date];
         NSLog(@"Date & weekday: %@ %@", dateString, weekday );
-        
-        /*
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [button addTarget:self action:@selector(switchView) forControlEvents:UIControlEventTouchDown];
-        NSString *string = weekdays[i];
-        [button setTitle:string forState:UIControlStateNormal];
-        button.Frame = CGRectMake(x,0, 100, 100);
-        //button.imageView.image = [UIImage imageNamed:@"graybox.jpg"];
-        button.layer.borderWidth = 1.0f;
-        button.layer.borderColor = [[UIColor blackColor] CGColor];
-        [self.buttonListScrollView addSubview:button];
-         NSLog(@"int %d",x);
-        x += button.frame.size.width;
-        NSLog(@"int %d",x);
-        */
-        
-        
         
      
         NSArray *buttonArray = [[NSBundle mainBundle] loadNibNamed:@"Button" owner:nil options:nil];
@@ -100,9 +83,12 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tappedStatusButton:)];
         tap.delegate = self;
         [button addGestureRecognizer:tap];
+        //#F69686
+        button.backgroundColor = [weekday isEqualToString:@"Thu"] ? [UIColor redColor]: button.backgroundColor;
+        
         
         [self.buttonListScrollView addSubview:button];
-       
+        date = nextDate;
         dateString = nextDateString;
         
     }
@@ -116,11 +102,24 @@
 {
     ButtonView *button = sender.view;
     
+    
     NSLog(@"De tap werkt, datum: %@", button.buttonDateLabel.text);
     //  NSLog(@"Biertap???");
+    //  NSLog(@"Nee, mong");
     //  NSLog(@"3/10");
     
     ViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    
+    if ([button.buttonDayLabel.text isEqualToString:@"Thu"])
+    {
+        controller.view.backgroundColor = [UIColor redColor];
+        controller.statusUitlegLabel.text = @"Vandaag is de kamer in sessie. Verwacht u aan een hevige Onkelinx storm!";
+        controller.situatieLabel.text = @"ABANDON SHIP";
+        controller.imageOnky.image = [UIImage imageNamed:@"onky2.jpg"];
+    }
+    
+    controller.datumLabel.text = button.buttonDateLabel.text;
+    
     
     [self transitionToViewcontroller:controller comingFromLeft:NO];
     
@@ -129,7 +128,7 @@
 - (IBAction)slideMenuButton:(UIButton *)sender
 {
     
-    NSLog(@"Hoi - Hamburger");
+  
     HamburgerViewController *burger = [self.storyboard instantiateViewControllerWithIdentifier:@"hamburger"];
     [self transitionToViewcontroller:burger comingFromLeft:YES];
     
@@ -145,14 +144,8 @@
     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionMoveIn;
     
-    if(isFromLeft)
-    {
-        transition.subtype = kCATransitionFromLeft;
-    }
-    else
-    {
-        transition.subtype = kCATransitionFromRight;
-    }
+    transition.subtype = isFromLeft ? kCATransitionFromLeft : kCATransitionFromRight;
+
     
     // NSLog(@"%s: self.view.window=%@", _func_, self.view.window);
     UIView *containerView = self.view.window;
