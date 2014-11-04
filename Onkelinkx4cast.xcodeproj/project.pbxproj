@@ -21,6 +21,7 @@
 		39A9D0B51A083633006735DB /* Button.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A9D0B41A083633006735DB /* Button.xib */; };
 		39A9D0B81A0836E6006735DB /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D0B71A0836E6006735DB /* ButtonView.m */; };
 		39A9D0BA1A083A2B006735DB /* Onky.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A9D0B91A083A2B006735DB /* Onky.png */; };
+		39DA60B11A09464D0010D767 /* SlideAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DA60B01A09464D0010D767 /* SlideAnimationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		39A9D0B61A0836E6006735DB /* ButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
 		39A9D0B71A0836E6006735DB /* ButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
 		39A9D0B91A083A2B006735DB /* Onky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Onky.png; sourceTree = "<group>"; };
+		39DA60AF1A09464D0010D767 /* SlideAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideAnimationController.h; sourceTree = "<group>"; };
+		39DA60B01A09464D0010D767 /* SlideAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideAnimationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 				39A9D0B21A083154006735DB /* HamburgerViewController.m */,
 				39A9D0811A07F50D006735DB /* ViewController.h */,
 				39A9D0821A07F50D006735DB /* ViewController.m */,
+				39DA60AF1A09464D0010D767 /* SlideAnimationController.h */,
+				39DA60B01A09464D0010D767 /* SlideAnimationController.m */,
 				39A9D0841A07F50D006735DB /* Main.storyboard */,
 				39A9D0B41A083633006735DB /* Button.xib */,
 				39A9D0B61A0836E6006735DB /* ButtonView.h */,
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A9D0A81A08170B006735DB /* ScrollViewBugFix.m in Sources */,
+				39DA60B11A09464D0010D767 /* SlideAnimationController.m in Sources */,
 				39A9D0831A07F50D006735DB /* ViewController.m in Sources */,
 				39A9D0801A07F50D006735DB /* AppDelegate.m in Sources */,
 				39A9D07D1A07F50D006735DB /* main.m in Sources */,
@@ -446,6 +452,7 @@
 				39A9D09C1A07F50D006735DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39A9D09D1A07F50D006735DB /* Build configuration list for PBXNativeTarget "Onkelinkx4castTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +461,7 @@
 				39A9D09F1A07F50D006735DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

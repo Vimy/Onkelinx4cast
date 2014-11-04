@@ -10,11 +10,13 @@
 #import <QuartzCore/QuartzCore.h>
 #import "HamburgerViewController.h"
 #import "ButtonView.h"
+#import "SlideAnimationController.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIScrollView *buttonListScrollView;
 @property (strong, nonatomic) IBOutlet UIImageView *image;
 @property (strong, nonatomic) IBOutlet UILabel *statusUitlegLabel;
+@property (strong, nonatomic) SlideAnimationController  *animator;
 
 @end
 
@@ -23,6 +25,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.animator = [SlideAnimationController new];
+    
     self.buttonListScrollView.userInteractionEnabled = YES;
     self.buttonListScrollView.scrollEnabled = YES;
     int x = 0;
@@ -39,7 +44,7 @@
     self.image.layer.borderWidth = 1.0f;
     self.image.layer.borderColor = [UIColor whiteColor].CGColor;
     
-    
+  
     NSArray *weekdays = @[@"MA", @"DI", @"WO",@"D0",@"VR",@"ZA",@"ZO"];
     
     NSDate *date = [NSDate date];
@@ -53,16 +58,21 @@
     for (int i = 0; count > i; i++)
     {
       
-        /*
-        NSDateComponents *dayComponent = [[[NSDateComponents alloc] init] autorelease];
+        
+        NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
         dayComponent.day = 1;
-        
         NSCalendar *theCalendar = [NSCalendar currentCalendar];
-        NSDate *nextDate = [theCalendar dateByAddingComponents:dayComponent toDate:[NSDate date] options:0];
+        NSDate *nextDate = [theCalendar dateByAddingComponents:dayComponent toDate:date options:0];
+        NSString *nextDateString = [dateFormatter stringFromDate:nextDate];
+       // NSLog(@"nextDate: %@", nextDateString   );
+        date = nextDate;
+        NSDateFormatter *weekdayFormatter = [[NSDateFormatter alloc]init];
         
-        NSLog(@"nextDate: %@ ...", nextDate);
-        */
+        [weekdayFormatter setDateFormat:@"E"];
+        NSString *weekday = [weekdayFormatter stringFromDate:date];
+        NSLog(@"Date & weekday: %@ %@", dateString, weekday );
         
+        /*
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button addTarget:self action:@selector(switchView) forControlEvents:UIControlEventTouchDown];
         NSString *string = weekdays[i];
@@ -75,17 +85,20 @@
          NSLog(@"int %d",x);
         x += button.frame.size.width;
         NSLog(@"int %d",x);
-        
-        
-        
-        
-      /*
-        NSArray *buttonArray = [[NSBundle mainBundle] loadNibNamed:@"Button" owner:self options:nil];
-        ButtonView *button = buttonArray[1];
-        button.buttonDayLabel.text = @"MA";
-        button.buttonDateLabel.text = @"3/11";
-        [self.buttonListScrollView addSubview:button];
         */
+        
+        
+        
+     
+        NSArray *buttonArray = [[NSBundle mainBundle] loadNibNamed:@"Button" owner:nil options:nil];
+        ButtonView *button = buttonArray[0];
+        button.buttonDayLabel.text = weekday;
+        button.buttonDateLabel.text = dateString;
+        button.frame = CGRectMake(x, 0, 100, 100);
+        x += button.frame.size.width;
+        [self.buttonListScrollView addSubview:button];
+       
+        dateString = nextDateString;
         
     }
     
@@ -100,14 +113,16 @@
     HamburgerViewController *burger = [self.storyboard instantiateViewControllerWithIdentifier:@"hamburger"];
     
     CATransition *transition = [CATransition animation];
-    transition.duration = 0.3;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionPush;
-    transition.subtype = kCATransitionFromRight;
-    [self.view.window.layer addAnimation:transition forKey:nil];
+    transition.duration = 0.35;
+    transition.timingFunction =
+    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    transition.subtype = kCATransitionFromLeft;
     
-    
-    [self presentViewController:burger animated:YES completion:nil];
+    // NSLog(@"%s: self.view.window=%@", _func_, self.view.window);
+    UIView *containerView = self.view.window;
+    [containerView.layer addAnimation:transition forKey:nil];
+    [self presentModalViewController:burger animated:NO];
     
 }
 
@@ -119,8 +134,17 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    return self.animator;
+}
 
-
+/*
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    //self.ani
+}
+*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
