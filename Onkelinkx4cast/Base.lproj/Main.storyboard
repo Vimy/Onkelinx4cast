@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6gr-HU-Lkn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4UY-nc-rOO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bY-EZ-che">
@@ -58,83 +60,79 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-pe-Vn9" customClass="ScrollViewBugFix">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="1" green="0.13268937375559942" blue="0.16225026356616867" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="zAe-UG-BGX"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="zAe-UG-BGX"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="500" width="406" height="100"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="511" width="400" height="100"/>
-                                    <mask key="constraints">
-                                        <include reference="zAe-UG-BGX"/>
-                                    </mask>
-                                </variation>
-                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qG7-bI-42f">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="6Gp-EY-Eh9"/>
-                                    <constraint firstAttribute="width" constant="40" id="rmC-dv-KWn"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="28" width="46" height="30"/>
                                 <state key="normal" image="1415070708_menu-alt-128.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6Gp-EY-Eh9"/>
-                                        <exclude reference="rmC-dv-KWn"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="6Gp-EY-Eh9"/>
-                                        <include reference="rmC-dv-KWn"/>
-                                    </mask>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="28" width="40" height="40"/>
                                 </variation>
                                 <connections>
                                     <action selector="slideMenuButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MPI-RC-F4r"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="Onky.png" translatesAutoresizingMaskIntoConstraints="NO" id="FtS-ca-Zl6">
+                                <rect key="frame" x="112" y="54" width="150" height="150"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="112" y="61" width="150" height="150"/>
+                                </variation>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-pe-Vn9" customClass="ScrollViewBugFix">
+                                <color key="backgroundColor" red="0.18176118263931501" green="0.8435126035911602" blue="0.12704266642747267" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="500" width="406" height="100"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-3" y="567" width="380" height="100"/>
+                                </variation>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vandaag 3/11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBw-F0-qNf">
+                                <rect key="frame" x="127" y="220" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="135" y="219" width="125" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Normale situatie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5h-bS-rdj">
+                                <rect key="frame" x="113" y="245" width="149" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="0.97084340469613262" green="0.97084340469613262" blue="0.97084340469613262" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="248" width="143" height="23"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eno-uV-7zX">
+                                <rect key="frame" x="85" y="288" width="204" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="56" y="274" width="283" height="65"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.50768648469916244" green="1" blue="0.57839646804687828" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="gUy-pe-Vn9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="AKW-uD-1Wy"/>
-                            <constraint firstItem="qG7-bI-42f" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="MaM-VY-sUA"/>
-                            <constraint firstAttribute="trailing" secondItem="gUy-pe-Vn9" secondAttribute="trailing" id="TXq-b3-Urf"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gUy-pe-Vn9" secondAttribute="bottom" id="cJ0-tz-Jvp"/>
-                            <constraint firstItem="qG7-bI-42f" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="fuA-mx-XMa"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gUy-pe-Vn9" secondAttribute="bottom" id="vtL-Be-fRm"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="gUy-pe-Vn9"/>
                                 <exclude reference="qG7-bI-42f"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="MaM-VY-sUA"/>
-                                <exclude reference="fuA-mx-XMa"/>
-                                <exclude reference="AKW-uD-1Wy"/>
-                                <exclude reference="TXq-b3-Urf"/>
-                                <exclude reference="cJ0-tz-Jvp"/>
-                                <exclude reference="vtL-Be-fRm"/>
+                                <exclude reference="FtS-ca-Zl6"/>
+                                <exclude reference="gUy-pe-Vn9"/>
+                                <exclude reference="iBw-F0-qNf"/>
+                                <exclude reference="H5h-bS-rdj"/>
+                                <exclude reference="Eno-uV-7zX"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -145,27 +143,27 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="qG7-bI-42f"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="MaM-VY-sUA"/>
-                                <include reference="fuA-mx-XMa"/>
-                                <include reference="AKW-uD-1Wy"/>
-                                <include reference="TXq-b3-Urf"/>
-                                <include reference="cJ0-tz-Jvp"/>
-                                <include reference="vtL-Be-fRm"/>
+                                <include reference="FtS-ca-Zl6"/>
+                                <include reference="iBw-F0-qNf"/>
+                                <include reference="H5h-bS-rdj"/>
+                                <include reference="Eno-uV-7zX"/>
                             </mask>
                         </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="buttonListScrollView" destination="gUy-pe-Vn9" id="Laa-L4-SSS"/>
+                        <outlet property="image" destination="FtS-ca-Zl6" id="Be2-xi-Z46"/>
+                        <outlet property="statusUitlegLabel" destination="Eno-uV-7zX" id="WSf-8t-o1A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="483"/>
+            <point key="canvasLocation" x="1350.5" y="505.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="1415070708_menu-alt-128.png" width="128" height="128"/>
+        <image name="Onky.png" width="264" height="239"/>
     </resources>
 </document>

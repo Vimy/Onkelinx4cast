@@ -18,6 +18,9 @@
 		39A9D0A81A08170B006735DB /* ScrollViewBugFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D0A71A08170B006735DB /* ScrollViewBugFix.m */; };
 		39A9D0AA1A082737006735DB /* 1415070708_menu-alt-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A9D0A91A082737006735DB /* 1415070708_menu-alt-128.png */; };
 		39A9D0B31A083154006735DB /* HamburgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D0B21A083154006735DB /* HamburgerViewController.m */; };
+		39A9D0B51A083633006735DB /* Button.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A9D0B41A083633006735DB /* Button.xib */; };
+		39A9D0B81A0836E6006735DB /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D0B71A0836E6006735DB /* ButtonView.m */; };
+		39A9D0BA1A083A2B006735DB /* Onky.png in Resources */ = {isa = PBXBuildFile; fileRef = 39A9D0B91A083A2B006735DB /* Onky.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,10 @@
 		39A9D0A91A082737006735DB /* 1415070708_menu-alt-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1415070708_menu-alt-128.png"; sourceTree = "<group>"; };
 		39A9D0B11A083154006735DB /* HamburgerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HamburgerViewController.h; path = ../HamburgerViewController.h; sourceTree = "<group>"; };
 		39A9D0B21A083154006735DB /* HamburgerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HamburgerViewController.m; path = ../HamburgerViewController.m; sourceTree = "<group>"; };
+		39A9D0B41A083633006735DB /* Button.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Button.xib; sourceTree = "<group>"; };
+		39A9D0B61A0836E6006735DB /* ButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
+		39A9D0B71A0836E6006735DB /* ButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
+		39A9D0B91A083A2B006735DB /* Onky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Onky.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,7 @@
 				39A9D0931A07F50D006735DB /* Onkelinkx4castTests */,
 				39A9D0781A07F50D006735DB /* Products */,
 				39A9D0A91A082737006735DB /* 1415070708_menu-alt-128.png */,
+				39A9D0B91A083A2B006735DB /* Onky.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +109,9 @@
 				39A9D0811A07F50D006735DB /* ViewController.h */,
 				39A9D0821A07F50D006735DB /* ViewController.m */,
 				39A9D0841A07F50D006735DB /* Main.storyboard */,
+				39A9D0B41A083633006735DB /* Button.xib */,
+				39A9D0B61A0836E6006735DB /* ButtonView.h */,
+				39A9D0B71A0836E6006735DB /* ButtonView.m */,
 				39A9D0A61A08170B006735DB /* ScrollViewBugFix.h */,
 				39A9D0A71A08170B006735DB /* ScrollViewBugFix.m */,
 				39A9D0871A07F50D006735DB /* Images.xcassets */,
@@ -216,6 +227,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A9D0BA1A083A2B006735DB /* Onky.png in Resources */,
+				39A9D0B51A083633006735DB /* Button.xib in Resources */,
 				39A9D0861A07F50D006735DB /* Main.storyboard in Resources */,
 				39A9D0AA1A082737006735DB /* 1415070708_menu-alt-128.png in Resources */,
 				39A9D08B1A07F50D006735DB /* LaunchScreen.xib in Resources */,
@@ -241,6 +254,7 @@
 				39A9D0831A07F50D006735DB /* ViewController.m in Sources */,
 				39A9D0801A07F50D006735DB /* AppDelegate.m in Sources */,
 				39A9D07D1A07F50D006735DB /* main.m in Sources */,
+				39A9D0B81A0836E6006735DB /* ButtonView.m in Sources */,
 				39A9D0B31A083154006735DB /* HamburgerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1DCB7E14-8997-444A-9DB3-E3B5CA1C1D4B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Onkelinkx4cast</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>390F6CB59FC47E70CCEC102E464859FF6B51EC7C</key>
+		<string>github.com:Vimy/Onkelinx4cast.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Onkelinkx4cast.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>390F6CB59FC47E70CCEC102E464859FF6B51EC7C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:Vimy/Onkelinx4cast.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>390F6CB59FC47E70CCEC102E464859FF6B51EC7C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>390F6CB59FC47E70CCEC102E464859FF6B51EC7C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Onkelinkx4cast</string>
+		</dict>
+	</array>
+</dict>
+</plist>
