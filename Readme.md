@@ -9,5 +9,6 @@ Local scientist theorize other onkelinxes could be residing in nests under banks
 The real reason I'm making this app is to learn custom transitions.
 
 
+Crappy .gif courtsey of ffmpeg.
 
-![Screenshot](http://i.imgur.com/HSoeQ5p.png)
+![Screenshot](http://i.imgur.com/yg3J5pb.gif)
