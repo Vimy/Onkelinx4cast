@@ -121,7 +121,7 @@
     controller.datumLabel.text = button.buttonDateLabel.text;
     
     
-    [self transitionToViewcontroller:controller comingFromLeft:NO];
+  //  [self transitionToViewcontroller:controller comingFromLeft:NO];
     
 }
 
@@ -139,6 +139,10 @@
     
   
     HamburgerViewController *burger = [self.storyboard instantiateViewControllerWithIdentifier:@"hamburger"];
+    if (burger)
+    {
+        NSLog(@"Burger is go");
+    }
     burger.transitioningDelegate = self;
     
     [self presentViewController:burger animated:YES completion:nil];
@@ -148,6 +152,7 @@
  // http://stackoverflow.com/questions/11412467/dismissmodalviewcontroller-with-transition-left-to-right
 }
 
+/*
 - (void)transitionToViewcontroller:(UIViewController *)vc comingFromLeft:(BOOL)isFromLeft
 {
     
@@ -168,7 +173,7 @@
 
     
 }
-/*- (void)switchView
+- (void)switchView
 {
     NSLog(@"Hoi");
     
@@ -176,14 +181,19 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 */
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
+    self.animator.isPresenting = YES;
     return self.animator;
 }
 
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
+    self.animator.isPresenting = NO;
     return self.animator;
 }
 
