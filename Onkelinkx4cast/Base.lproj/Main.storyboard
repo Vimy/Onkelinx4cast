@@ -5,6 +5,66 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Onkelinx View View Controller-->
+        <scene sceneID="nzf-ek-dDG">
+            <objects>
+                <viewController storyboardIdentifier="OnkelinxView" id="rxP-84-ufW" customClass="OnkelinxViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4kn-Gf-90g"/>
+                        <viewControllerLayoutGuide type="bottom" id="uOd-b6-l5O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LkU-t5-FF5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" fixedFrame="YES" image="Onky.png" translatesAutoresizingMaskIntoConstraints="NO" id="FtS-ca-Zl6">
+                                <rect key="frame" x="118" y="64" width="150" height="150"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="112" y="61" width="150" height="150"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vandaag 3/11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBw-F0-qNf">
+                                <rect key="frame" x="118" y="230" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="135" y="219" width="125" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eno-uV-7zX">
+                                <rect key="frame" x="91" y="294" width="204" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="56" y="274" width="283" height="65"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" fixedFrame="YES" text="Normale situatie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5h-bS-rdj">
+                                <rect key="frame" x="91" y="259" width="204" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="0.97084340469613262" green="0.97084340469613262" blue="0.97084340469613262" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="248" width="143" height="23"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.26666666666666666" green="0.50196078431372548" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="datumLabel" destination="iBw-F0-qNf" id="xdW-E6-bqb"/>
+                        <outlet property="profileImageView" destination="FtS-ca-Zl6" id="prC-39-q9G"/>
+                        <outlet property="situatieLabel" destination="H5h-bS-rdj" id="oBv-Yy-FzA"/>
+                        <outlet property="statusUitlegLabel" destination="Eno-uV-7zX" id="1SC-X4-jIg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ix-3z-708" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2438.5" y="590.5"/>
+        </scene>
         <!--Hamburger View Controller-->
         <scene sceneID="uXh-iw-ujf">
             <objects>
@@ -88,7 +148,7 @@ statussen</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzM-ni-XdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601.5" y="518.5"/>
+            <point key="canvasLocation" x="2842.5" y="518.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -102,39 +162,6 @@ statussen</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" fixedFrame="YES" image="Onky.png" translatesAutoresizingMaskIntoConstraints="NO" id="FtS-ca-Zl6">
-                                <rect key="frame" x="112" y="118" width="150" height="150"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="112" y="61" width="150" height="150"/>
-                                </variation>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vandaag 3/11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBw-F0-qNf">
-                                <rect key="frame" x="127" y="284" width="120" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="135" y="219" width="125" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eno-uV-7zX">
-                                <rect key="frame" x="85" y="352" width="204" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="56" y="274" width="283" height="65"/>
-                                </variation>
-                            </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-pe-Vn9" customClass="ScrollViewBugFix">
-                                <color key="backgroundColor" red="0.26666666666666666" green="0.49803921568627452" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="500" width="406" height="100"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-3" y="567" width="380" height="100"/>
-                                </variation>
-                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mK9-XI-bpd">
                                 <rect key="frame" x="16" y="28" width="46" height="30"/>
                                 <state key="normal" image="1415070708_menu-alt-128.png">
@@ -147,28 +174,23 @@ statussen</string>
                                     <action selector="slideMenuButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rGd-jJ-S9t"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" fixedFrame="YES" text="Normale situatie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5h-bS-rdj">
-                                <rect key="frame" x="82" y="313" width="233" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <color key="textColor" red="0.97084340469613262" green="0.97084340469613262" blue="0.97084340469613262" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="126" y="248" width="143" height="23"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-pe-Vn9" customClass="ScrollViewBugFix">
+                                <color key="backgroundColor" red="0.26666666666666666" green="0.49803921568627452" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="500" width="406" height="100"/>
                                 </variation>
-                            </label>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-3" y="567" width="380" height="100"/>
+                                </variation>
+                            </scrollView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRI-Sy-gZQ">
+                                <rect key="frame" x="-15" y="66" width="390" height="516"/>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.32549019607843138" green="0.5607843137254902" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="gUy-pe-Vn9"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="FtS-ca-Zl6"/>
-                                <include reference="iBw-F0-qNf"/>
-                                <include reference="Eno-uV-7zX"/>
-                                <include reference="H5h-bS-rdj"/>
                             </mask>
                         </variation>
                     </view>
@@ -189,15 +211,12 @@ statussen</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="buttonListScrollView" destination="gUy-pe-Vn9" id="Laa-L4-SSS"/>
-                        <outlet property="datumLabel" destination="iBw-F0-qNf" id="CtM-jJ-R8h"/>
-                        <outlet property="image" destination="FtS-ca-Zl6" id="Zod-Al-uFo"/>
-                        <outlet property="situatieLabel" destination="H5h-bS-rdj" id="E1Y-sI-tP3"/>
-                        <outlet property="statusUitlegLabel" destination="Eno-uV-7zX" id="JTo-7j-RWK"/>
+                        <outlet property="containerView" destination="ZRI-Sy-gZQ" id="8Ar-I4-TB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2049.5" y="518.5"/>
+            <point key="canvasLocation" x="1986.5" y="509.5"/>
         </scene>
     </scenes>
     <resources>

@@ -11,6 +11,9 @@
 #import "HamburgerViewController.h"
 #import "ButtonView.h"
 #import "SlideAnimationController.h"
+#import "OnkelinxViewViewController.h"
+
+
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -36,29 +39,44 @@
     int count = 7;
 
     self.buttonListScrollView.contentSize = CGSizeMake(700, 0);
-    self.statusUitlegLabel.text = @"Het parlement komt niet samen vandaag. Er is geen reden tot ongerustheid!";
-  //  self.buttonListScrollView.panGestureRecognizer.delaysTouchesBegan = self.buttonListScrollView.delaysContentTouches;
+ 
   
-    
-    self.image.clipsToBounds = YES;
-  //  self.image.layer.cornerRadius = self.image.frame.size.width/2;
-    self.image.layer.borderWidth = 1.0f;
-    self.image.layer.borderColor = [UIColor whiteColor].CGColor;
-    
-  
+    OnkelinxViewViewController *onkyVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"OnkelinxView"];
+    [self addChildViewController:onkyVC];
+    onkyVC.view.frame = self.containerView.bounds;
+    [self.containerView addSubview:onkyVC.view];
     
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd/MM"];
     NSString *dateString = [dateFormatter stringFromDate:date];
+    
+    NSDateFormatter *weekdayFormatter = [[NSDateFormatter alloc]init];
+    [weekdayFormatter setDateFormat:@"E"];
+    NSString *weekday = [weekdayFormatter stringFromDate:date];
+    
+    if ([weekday isEqualToString:@"Thu"])
+    {
+        onkyVC.view.backgroundColor = [UIColor redColor];
+        onkyVC.statusUitlegLabel.text = @"Vandaag is de kamer in sessie. Verwacht u aan een hevige Onkelinx storm!";
+        onkyVC.situatieLabel.text = @"ALARM";
+        onkyVC.profileImageView.image = [UIImage imageNamed:@"onky2.jpg"];
+        
+        onkyVC.datumLabel.text = [NSString stringWithFormat:@"Datum: %@", dateString];
+        self.view.backgroundColor = [UIColor redColor];
+
+    }
+    
+    
+    
+    
   //  NSLog(@"Date %@", dateString);
     
     
     
     for (int i = 0; count > i; i++)
     {
-      
-        
+ 
         NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
         dayComponent.day = 1;
         NSCalendar *theCalendar = [NSCalendar currentCalendar];
@@ -66,9 +84,7 @@
         NSString *nextDateString = [dateFormatter stringFromDate:nextDate];
        // NSLog(@"nextDate: %@", nextDateString   );
         
-        NSDateFormatter *weekdayFormatter = [[NSDateFormatter alloc]init];
-        
-        [weekdayFormatter setDateFormat:@"E"];
+    
         NSString *weekday = [weekdayFormatter stringFromDate:date];
         NSLog(@"Date & weekday: %@ %@", dateString, weekday );
         
@@ -108,26 +124,45 @@
     //  NSLog(@"Nee, mong");
     //  NSLog(@"3/10");
     
-    ViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-    
+    OnkelinxViewViewController *onkyVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"OnkelinxView"];
+    UIViewController *vc = self.childViewControllers[0];
+
     if ([button.buttonDayLabel.text isEqualToString:@"Thu"])
     {
-        controller.view.backgroundColor = [UIColor redColor];
-        controller.statusUitlegLabel.text = @"Vandaag is de kamer in sessie. Verwacht u aan een hevige Onkelinx storm!";
-        controller.situatieLabel.text = @"ABANDON SHIP";
-        controller.imageOnky.image = [UIImage imageNamed:@"onky2.jpg"];
+        onkyVC.view.backgroundColor = [UIColor redColor];
+        onkyVC.statusUitlegLabel.text = @"Vandaag is de kamer in sessie. Verwacht u aan een hevige Onkelinx storm!";
+        onkyVC.situatieLabel.text = @"ALARM";
+         onkyVC.profileImageView.image = [UIImage imageNamed:@"onky2.jpg"];
+        self.view.backgroundColor = [UIColor redColor];
     }
-    
-    controller.datumLabel.text = button.buttonDateLabel.text;
-    
-    
-  //  [self transitionToViewcontroller:controller comingFromLeft:NO];
+    NSLog(@"Datum: %@", button.buttonDateLabel.text);
+    self.view.backgroundColor = onkyVC.view.backgroundColor;
+    onkyVC.datumLabel.text = [NSString stringWithFormat:@"Datum: %@", button.buttonDateLabel.text];
+     [self swapFromViewController:vc toViewController:onkyVC];
     
 }
 
+
+
+- (void)swapFromViewController:(UIViewController *)oldVC toViewController:(UIViewController *)newVC
+{
+    newVC.view.frame = oldVC.view.frame;
+    [oldVC willMoveToParentViewController:nil];
+    [self addChildViewController:newVC];
+    [self transitionFromViewController:oldVC toViewController:newVC duration:0.5 options:UIViewAnimationOptionTransitionFlipFromLeft   animations:^{
+        
+    } completion:^(BOOL finished){
+        [oldVC removeFromParentViewController];
+        [newVC didMoveToParentViewController:self];
+    }];
+
+}
+
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-     HamburgerViewController *toViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"hamburger"];
+    HamburgerViewController *toViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"hamburger"];
     toViewController = segue.destinationViewController;
     toViewController.transitioningDelegate = self;
     

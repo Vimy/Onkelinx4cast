@@ -10,11 +10,8 @@
 
 @interface ViewController : UIViewController <UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate>
 
-@property (strong, nonatomic) IBOutlet UILabel *datumLabel;
-@property (strong, nonatomic) IBOutlet UILabel *situatieLabel;
-@property (strong, nonatomic) IBOutlet UILabel *statusUitlegLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *image;
 
+@property (strong, nonatomic) IBOutlet UIView *containerView;
 
 @end
 

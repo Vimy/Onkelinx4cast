@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39121B091A0C2237007B255C /* OnkelinxViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39121B081A0C2237007B255C /* OnkelinxViewViewController.m */; };
 		39A9D07D1A07F50D006735DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D07C1A07F50D006735DB /* main.m */; };
 		39A9D0801A07F50D006735DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D07F1A07F50D006735DB /* AppDelegate.m */; };
 		39A9D0831A07F50D006735DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D0821A07F50D006735DB /* ViewController.m */; };
@@ -27,6 +28,7 @@
 		39DA60B71A09713B0010D767 /* bullet4.png in Resources */ = {isa = PBXBuildFile; fileRef = 39DA60B61A09713B0010D767 /* bullet4.png */; };
 		39DA60B91A0971510010D767 /* caution2.png in Resources */ = {isa = PBXBuildFile; fileRef = 39DA60B81A0971510010D767 /* caution2.png */; };
 		39DA60BB1A099A240010D767 /* onky2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39DA60BA1A099A240010D767 /* onky2.jpg */; };
+		39DA60F61A0C151F0010D767 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DA60F51A0C151F0010D767 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39121B071A0C2237007B255C /* OnkelinxViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnkelinxViewViewController.h; sourceTree = "<group>"; };
+		39121B081A0C2237007B255C /* OnkelinxViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnkelinxViewViewController.m; sourceTree = "<group>"; };
 		39A9D0771A07F50D006735DB /* Onkelinkx4cast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Onkelinkx4cast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A9D07B1A07F50D006735DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39A9D07C1A07F50D006735DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 		39DA60B61A09713B0010D767 /* bullet4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet4.png; sourceTree = "<group>"; };
 		39DA60B81A0971510010D767 /* caution2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caution2.png; sourceTree = "<group>"; };
 		39DA60BA1A099A240010D767 /* onky2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = onky2.jpg; sourceTree = "<group>"; };
+		39DA60F51A0C151F0010D767 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39DA60F61A0C151F0010D767 /* CoreGraphics.framework in Frameworks */,
 				39A9D0A51A0812DB006735DB /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,13 +97,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39A9D06E1A07F50D006735DB = {
+		39121B0A1A0C284A007B255C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				39A9D0A41A0812DB006735DB /* QuartzCore.framework */,
-				39A9D0791A07F50D006735DB /* Onkelinkx4cast */,
-				39A9D0931A07F50D006735DB /* Onkelinkx4castTests */,
-				39A9D0781A07F50D006735DB /* Products */,
+				39A9D0B11A083154006735DB /* HamburgerViewController.h */,
+				39A9D0B21A083154006735DB /* HamburgerViewController.m */,
+				39A9D0811A07F50D006735DB /* ViewController.h */,
+				39A9D0821A07F50D006735DB /* ViewController.m */,
+				39121B071A0C2237007B255C /* OnkelinxViewViewController.h */,
+				39121B081A0C2237007B255C /* OnkelinxViewViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		39121B0B1A0C2856007B255C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				39A9D0841A07F50D006735DB /* Main.storyboard */,
+				39A9D0B41A083633006735DB /* Button.xib */,
+				39A9D0B61A0836E6006735DB /* ButtonView.h */,
+				39A9D0B71A0836E6006735DB /* ButtonView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		39121B0C1A0C285C007B255C /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				39DA60AF1A09464D0010D767 /* SlideAnimationController.h */,
+				39DA60B01A09464D0010D767 /* SlideAnimationController.m */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+		39121B0D1A0C287C007B255C /* images */ = {
+			isa = PBXGroup;
+			children = (
 				39A9D0A91A082737006735DB /* 1415070708_menu-alt-128.png */,
 				39A9D0B91A083A2B006735DB /* Onky.png */,
 				39DA60B21A096ED20010D767 /* close_icon.png */,
@@ -105,6 +140,19 @@
 				39DA60B61A09713B0010D767 /* bullet4.png */,
 				39DA60B81A0971510010D767 /* caution2.png */,
 				39DA60BA1A099A240010D767 /* onky2.jpg */,
+			);
+			name = images;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		39A9D06E1A07F50D006735DB = {
+			isa = PBXGroup;
+			children = (
+				39DA60F51A0C151F0010D767 /* CoreGraphics.framework */,
+				39A9D0A41A0812DB006735DB /* QuartzCore.framework */,
+				39A9D0791A07F50D006735DB /* Onkelinkx4cast */,
+				39A9D0931A07F50D006735DB /* Onkelinkx4castTests */,
+				39A9D0781A07F50D006735DB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,20 +170,14 @@
 			children = (
 				39A9D07E1A07F50D006735DB /* AppDelegate.h */,
 				39A9D07F1A07F50D006735DB /* AppDelegate.m */,
-				39A9D0B11A083154006735DB /* HamburgerViewController.h */,
-				39A9D0B21A083154006735DB /* HamburgerViewController.m */,
-				39A9D0811A07F50D006735DB /* ViewController.h */,
-				39A9D0821A07F50D006735DB /* ViewController.m */,
-				39DA60AF1A09464D0010D767 /* SlideAnimationController.h */,
-				39DA60B01A09464D0010D767 /* SlideAnimationController.m */,
-				39A9D0841A07F50D006735DB /* Main.storyboard */,
-				39A9D0B41A083633006735DB /* Button.xib */,
-				39A9D0B61A0836E6006735DB /* ButtonView.h */,
-				39A9D0B71A0836E6006735DB /* ButtonView.m */,
 				39A9D0A61A08170B006735DB /* ScrollViewBugFix.h */,
 				39A9D0A71A08170B006735DB /* ScrollViewBugFix.m */,
+				39121B0A1A0C284A007B255C /* ViewControllers */,
+				39121B0C1A0C285C007B255C /* Animation */,
+				39121B0B1A0C2856007B255C /* Views */,
 				39A9D0871A07F50D006735DB /* Images.xcassets */,
 				39A9D0891A07F50D006735DB /* LaunchScreen.xib */,
+				39121B0D1A0C287C007B255C /* images */,
 				39A9D07A1A07F50D006735DB /* Supporting Files */,
 			);
 			path = Onkelinkx4cast;
@@ -276,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A9D0A81A08170B006735DB /* ScrollViewBugFix.m in Sources */,
+				39121B091A0C2237007B255C /* OnkelinxViewViewController.m in Sources */,
 				39DA60B11A09464D0010D767 /* SlideAnimationController.m in Sources */,
 				39A9D0831A07F50D006735DB /* ViewController.m in Sources */,
 				39A9D0801A07F50D006735DB /* AppDelegate.m in Sources */,
