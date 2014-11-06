@@ -10,5 +10,7 @@ The real reason I'm making this app is to learn custom transitions.
 
 
 Crappy .gif courtsey of ffmpeg.
+For now, the only custom animation is when tapping on hamburger menu.
+
 
 ![Screenshot](http://i.imgur.com/yg3J5pb.gif)
