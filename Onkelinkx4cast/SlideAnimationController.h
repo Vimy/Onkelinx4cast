@@ -10,4 +10,6 @@
 
 @interface SlideAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
+@property (nonatomic, assign) BOOL isPresenting;
+
 @end

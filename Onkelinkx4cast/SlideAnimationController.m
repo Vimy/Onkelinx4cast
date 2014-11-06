@@ -10,9 +10,10 @@
 
 @implementation SlideAnimationController
 
+
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return 10;
+    return 1;
     
 }
 
@@ -21,12 +22,19 @@
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
-    [[transitionContext containerView]addSubview:toViewController.view];
+    UIView *container = transitionContext.containerView;
+    
+    CGAffineTransform offScreenRight = CGAffineTransformMakeTranslation(container.frame.size.width, 0);
+    CGAffineTransform offScreenLeft = CGAffineTransformMakeTranslation(-container.frame.size.width, 0);
+    
+    
+    
+    
+    [container addSubview:toViewController.view];
     toViewController.view.alpha = 0;
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-        fromViewController.view.transform = CGAffineTransformMakeScale(0.1, 0.1);
-        toViewController.view.alpha = 1;
+        fromViewController.view.transform = offScreenLeft;
     } completion:^(BOOL finished) {
         fromViewController.view.transform = CGAffineTransformIdentity;
         [transitionContext completeTransition:[transitionContext transitionWasCancelled]];
@@ -34,5 +42,7 @@
     
     
 }
+
+
 
 @end

@@ -125,12 +125,25 @@
     
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+     HamburgerViewController *toViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"hamburger"];
+    toViewController = segue.destinationViewController;
+    toViewController.transitioningDelegate = self;
+    
+    
+}
+
 - (IBAction)slideMenuButton:(UIButton *)sender
 {
     
   
     HamburgerViewController *burger = [self.storyboard instantiateViewControllerWithIdentifier:@"hamburger"];
-    [self transitionToViewcontroller:burger comingFromLeft:YES];
+    burger.transitioningDelegate = self;
+    
+    [self presentViewController:burger animated:YES completion:nil];
+    
+    //[self transitionToViewcontroller:burger comingFromLeft:YES];
     
  // http://stackoverflow.com/questions/11412467/dismissmodalviewcontroller-with-transition-left-to-right
 }
@@ -168,12 +181,12 @@
     return self.animator;
 }
 
-/*
+
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
-    //self.ani
+    return self.animator;
 }
-*/
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

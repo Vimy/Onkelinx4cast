@@ -10,30 +10,20 @@
             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foO-uG-yoO">
-                    <rect key="frame" x="34" y="30" width="32" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRP-34-eYN">
-                    <rect key="frame" x="25" y="59" width="51" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRP-34-eYN">
+                    <rect key="frame" x="25" y="55" width="51" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.94765632624840423" green="0.95344872237569056" blue="0.94335055407220891" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="highlightedColor" red="0.99351113063328356" green="1" blue="0.90266641542469872" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foO-uG-yoO">
+                    <rect key="frame" x="31" y="26" width="51" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.26666666666666666" green="0.49803921568627452" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
-            <constraints>
-                <constraint firstItem="foO-uG-yoO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="34" id="8Is-L7-aDG"/>
-                <constraint firstItem="VRP-34-eYN" firstAttribute="top" secondItem="foO-uG-yoO" secondAttribute="bottom" constant="8" id="B0L-R2-P0Z"/>
-                <constraint firstItem="VRP-34-eYN" firstAttribute="top" secondItem="foO-uG-yoO" secondAttribute="bottom" constant="8" id="J0k-v3-ln6"/>
-                <constraint firstAttribute="trailing" secondItem="foO-uG-yoO" secondAttribute="trailing" constant="34" id="KYm-MN-XdW"/>
-                <constraint firstAttribute="trailing" secondItem="VRP-34-eYN" secondAttribute="trailing" constant="24" id="cPE-3B-2rz"/>
-                <constraint firstItem="foO-uG-yoO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="nBg-aw-Ok7"/>
-                <constraint firstAttribute="bottom" secondItem="VRP-34-eYN" secondAttribute="bottom" constant="20" id="uTf-Pf-4Z0"/>
-                <constraint firstItem="VRP-34-eYN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="x6P-Nw-luQ"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="buttonDateLabel" destination="VRP-34-eYN" id="Hac-JM-0xn"/>

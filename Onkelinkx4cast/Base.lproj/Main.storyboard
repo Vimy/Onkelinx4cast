@@ -117,15 +117,6 @@ statussen</string>
                                     <rect key="frame" x="135" y="219" width="125" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" fixedFrame="YES" text="Normale situatie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5h-bS-rdj">
-                                <rect key="frame" x="113" y="309" width="207" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <color key="textColor" red="0.97084340469613262" green="0.97084340469613262" blue="0.97084340469613262" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="126" y="248" width="143" height="23"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eno-uV-7zX">
                                 <rect key="frame" x="85" y="352" width="204" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -153,9 +144,18 @@ statussen</string>
                                     <rect key="frame" x="16" y="28" width="40" height="40"/>
                                 </variation>
                                 <connections>
-                                    <action selector="slideMenuButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="22G-j9-xbp"/>
+                                    <action selector="slideMenuButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rGd-jJ-S9t"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" fixedFrame="YES" text="Normale situatie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5h-bS-rdj">
+                                <rect key="frame" x="82" y="313" width="233" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="0.97084340469613262" green="0.97084340469613262" blue="0.97084340469613262" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="248" width="143" height="23"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.32549019607843138" green="0.5607843137254902" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="widthClass=compact">
@@ -167,8 +167,8 @@ statussen</string>
                             <mask key="subviews">
                                 <include reference="FtS-ca-Zl6"/>
                                 <include reference="iBw-F0-qNf"/>
-                                <include reference="H5h-bS-rdj"/>
                                 <include reference="Eno-uV-7zX"/>
+                                <include reference="H5h-bS-rdj"/>
                             </mask>
                         </variation>
                     </view>
@@ -183,9 +183,6 @@ statussen</string>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="16" y="28" width="40" height="40"/>
                                 </variation>
-                                <connections>
-                                    <action selector="slideMenuButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MPI-RC-F4r"/>
-                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
