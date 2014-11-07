@@ -9,7 +9,7 @@ Local scientist theorize other onkelinxes could be residing in nests under banks
 The real reason I'm making this app is to learn custom transitions.
 
 
-Crappy .gif courtsey of ffmpeg.
+Crappy .gif courtesy of ffmpeg.
 For now, the only custom animation is when tapping on hamburger menu.
 
 
